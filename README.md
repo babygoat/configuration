@@ -1,11 +1,11 @@
-#ctags
+# ctags
 brew install tags
 
-#cscope
+# cscope
 brew install cscope
 
-#GoTags
+# GoTags
 brew install gotags
 
-#vim-airline themes(Solarized Dark)
+# vim-airline themes(Solarized Dark)
 :AirlineTheme Solarized
