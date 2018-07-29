@@ -14,6 +14,19 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'fatih/vim-go', { 'for': 'go' }
 
+function! BuildYCM(info)
+  " info is a dictionary with 3 fields
+  " - name:   name of the plugin
+  " - status: 'installed', 'updated', or 'unchanged'
+  " - force:  set on PlugInstall! or PlugUpdate!
+  if a:info.status == 'installed' || a:info.force
+    !./install.py --go-completer
+  endif
+endfunction
+
+" Prerequisite: cmake (brew install cmake)
+Plug 'Valloric/YouCompleteMe', {'do': function('BuildYCM')}
+
 call plug#end()
 
 source ~/babygoat.vim
@@ -38,6 +51,7 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 " GO Shortcut
+" leader key default: '\'
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
@@ -73,6 +87,10 @@ let g:tagbar_type_go = {
     \ }  
 
 autocmd VimEnter * if !argc() | execute 'NERDTreeTabsToggle' | endif
+
+"YouCompleteMe options
+let g:ycm_autoclose_preview_window_after_insertion = 1 " Close preview window when leaving insertion mode
+let g:ycm_autoclose_preview_window_after_completion = 1 " Close preview window when accepts offer\
 
 " Vim-airline Theme(solarized dark)
 autocmd VimEnter * if exists(":AirlineTheme") | AirlineTheme solarized | let g:airline_solarized_bg='dark' | endif
