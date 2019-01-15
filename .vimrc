@@ -95,3 +95,8 @@ let g:omni_sql_no_default_maps = 1
 
 " Vim-airline Theme(solarized dark)
 autocmd VimEnter * if exists(":AirlineTheme") | AirlineTheme solarized | let g:airline_solarized_bg='dark' | endif
+
+" Expand tabs in .apib(apiblueprint filetype)
+au FileType conf setlocal expandtab tabstop=4 shiftwidth=4
+
+au FileType yaml setlocal expandtab tabstop=2 shiftwidth=2
