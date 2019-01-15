@@ -100,3 +100,6 @@ autocmd VimEnter * if exists(":AirlineTheme") | AirlineTheme solarized | let g:a
 au FileType conf setlocal expandtab tabstop=4 shiftwidth=4
 
 au FileType yaml setlocal expandtab tabstop=2 shiftwidth=2
+
+" Expand tabs in .conf(logstash filetype)
+autocmd FileType logstash setlocal expandtab tabstop=4 shiftwidth=4
