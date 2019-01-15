@@ -91,6 +91,7 @@ autocmd VimEnter * if !argc() | execute 'NERDTreeTabsToggle' | endif
 "YouCompleteMe options
 let g:ycm_autoclose_preview_window_after_insertion = 1 " Close preview window when leaving insertion mode
 let g:ycm_autoclose_preview_window_after_completion = 1 " Close preview window when accepts offer\
+let g:omni_sql_no_default_maps = 1
 
 " Vim-airline Theme(solarized dark)
 autocmd VimEnter * if exists(":AirlineTheme") | AirlineTheme solarized | let g:airline_solarized_bg='dark' | endif
