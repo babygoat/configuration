@@ -14,6 +14,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'fatih/vim-go', { 'for': 'go' }
 
+Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+
+
 function! BuildYCM(info)
   " info is a dictionary with 3 fields
   " - name:   name of the plugin
@@ -30,14 +34,14 @@ Plug 'Valloric/YouCompleteMe', {'do': function('BuildYCM')}
 call plug#end()
 
 source ~/babygoat.vim
-source ~/cscope_maps.vim
+"source ~/cscope_maps.vim
 
 map <c-n> :cnext<CR>
 map <c-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 
 " mapping the NERDTreeTabsToggle
-map <c-o> :NERDTreeTabsToggle<CR>
+map <leader>o :NERDTreeTabsToggle<CR>
 
 " Enable Mouse
 set mouse=a
@@ -93,7 +97,12 @@ let g:ycm_autoclose_preview_window_after_insertion = 1 " Close preview window wh
 let g:ycm_autoclose_preview_window_after_completion = 1 " Close preview window when accepts offer\
 let g:omni_sql_no_default_maps = 1
 
-" Vim-airline Theme(solarized dark)
+if !exists("g:ycm_semantic_triggers")
+	let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
+
+" Vim-airline Theme (solarized dark)
 autocmd VimEnter * if exists(":AirlineTheme") | AirlineTheme solarized | let g:airline_solarized_bg='dark' | endif
 
 " Expand tabs in .apib(apiblueprint filetype)
