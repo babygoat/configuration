@@ -79,8 +79,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 export GOPATH="$HOME/workarea/go"
 export PATH="$PATH:$GOPATH/bin"
-
-export CSCOPE_DB="$PWD/cscope.out"
+export GO111MODULE=on
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
