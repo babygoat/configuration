@@ -119,3 +119,6 @@ au FileType typescript setlocal expandtab tabstop=2 shiftwidth=2
 
 " Expand tab in .json
 au FileType json setlocal expandtab tabstop=2 shiftwidth=2
+
+" Auto reload vimrc
+autocmd bufwritepost .vimrc source $MYVIMRC
