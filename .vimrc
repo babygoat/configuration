@@ -112,3 +112,10 @@ au FileType yaml setlocal expandtab tabstop=2 shiftwidth=2
 
 " Expand tabs in .conf(logstash filetype)
 autocmd FileType logstash setlocal expandtab tabstop=4 shiftwidth=4
+
+" Expand tab in .js, .jsx, ts filetype
+au FileType javascript setlocal expandtab tabstop=2 shiftwidth=2
+au FileType typescript setlocal expandtab tabstop=2 shiftwidth=2
+
+" Expand tab in .json
+au FileType json setlocal expandtab tabstop=2 shiftwidth=2
