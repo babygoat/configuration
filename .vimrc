@@ -36,9 +36,13 @@ call plug#end()
 source ~/babygoat.vim
 "source ~/cscope_maps.vim
 
-map <c-n> :cnext<CR>
-map <c-m> :cprevious<CR>
+nnoremap <c-n> :cnext<CR>
+nnoremap <c-p> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
+" Open quickfix window automatically if vimgrep matched items exist
+autocmd QuickFixCmdPost [^l]* cwindow
+" Open location window automatically if lvimgrep matched items exist
+autocmd QuickFixCmdPost    l* lwindow
 
 " mapping the NERDTreeTabsToggle
 map <leader>o :NERDTreeTabsToggle<CR>
