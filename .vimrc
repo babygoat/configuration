@@ -66,6 +66,7 @@ au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 
 autocmd VimEnter * if !argc() | execute 'NERDTreeTabsToggle' | endif
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
 
 "YouCompleteMe options
 let g:ycm_autoclose_preview_window_after_insertion = 1 " Close preview window when leaving insertion mode
