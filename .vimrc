@@ -17,6 +17,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 
+Plug 'lervag/vimtex'
 
 function! BuildYCM(info)
   " info is a dictionary with 3 fields
